@@ -370,11 +370,11 @@ def final_strategy(score, opponent_score):
     if score > opponent_score and 100 - score <= 12:
         if sus_update(0, score, opponent_score)  >= 100:
                 return 0
-        i = 1
-        while i<=2:
-            if score + make_averaged(roll_dice, 1000)(i, six_sided) >= 100:
-                return i
-            i+=1
+        j = 1
+        while j<=2:
+            if score + make_averaged(roll_dice, 1000)(j, six_sided) >= 100:
+                return j
+            j+=1
     
     if  sus_update(0, score, opponent_score) - score >  make_averaged(roll_dice, 1000)(6, six_sided):
         return 0
