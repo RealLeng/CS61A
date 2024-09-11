@@ -366,8 +366,21 @@ def final_strategy(score, opponent_score):
 
     *** YOUR DESCRIPTION HERE ***
     """
-    # BEGIN PROBLEM 12
-    return 6  # Remove this line once implemented.
+    # BEGIN PROBLEM 12asd
+    if score > opponent_score and 100 - score <= 12:
+        if sus_update(0, score, opponent_score)  >= 100:
+                return 0
+        i = 1
+        while i<=2:
+            if score + make_averaged(roll_dice, 1000)(i, six_sided) >= 100:
+                return i
+            i+=1
+    
+    if  sus_update(0, score, opponent_score) - score >  make_averaged(roll_dice, 1000)(6, six_sided):
+        return 0
+    else:
+        return 6
+    #return 6  # Remove this line once implemented.
     # END PROBLEM 12
 
 
